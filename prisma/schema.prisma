@@ -45,6 +45,7 @@ enum TASK_STATUS {
   COMPLETED
 }
 
+
 model Task {
   id        String   @id @default(uuid())
   createdAt DateTime @default(now())

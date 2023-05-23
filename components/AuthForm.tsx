@@ -36,6 +36,8 @@ export default function AuthForm({ mode }: { mode: 'register' | 'signin' }) {
 
       try {
         if (mode === 'register') {
+          console.log('register');
+
           await register(formState);
         } else {
           await signin(formState);

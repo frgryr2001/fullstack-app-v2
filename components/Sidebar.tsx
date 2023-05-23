@@ -1,7 +1,8 @@
 import Card from './Card';
 import Image from 'next/image';
-import logo from '@/assets/images/logo.png';
+// import logo from '@/assets/images/logo.png';
 import SidebarLink from '@/components/SidebarLink';
+import { randomUUID } from 'crypto';
 
 const links = [
   { label: 'Home', icon: 'Grid', link: '/home' },
@@ -22,10 +23,10 @@ const Sidebar = () => {
   return (
     <Card className="flex flex-wrap items-center justify-between w-40 h-full">
       <div className="flex items-center justify-center w-full">
-        <Image src={logo} alt="Able logo" priority className="w-14" />
+        {/* <Image src={logo} alt="Able logo" priority className="w-14" /> */}
       </div>
       {links.map((link) => (
-        <SidebarLink link={link} key={link} />
+        <SidebarLink link={link} key={link + randomUUID()} />
       ))}
     </Card>
   );
